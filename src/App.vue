@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">VueJS Todolist</a>
+  </nav>
+  <div class="container">
+    <AddTodoItem />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AddTodoItem from './components/AddTodoItem.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: "App",
+    data() {
+        return {
+            todoItems: [
+                {
+                    title: "FirstItem",
+                    done: false,
+                    deadline: Date()
+                }
+            ]
+        };
+    },
+    components: { AddTodoItem }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
